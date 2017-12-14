@@ -1,3 +1,5 @@
+package stm;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -6,10 +8,9 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.file.Files;
 
-public class FileDownloader {
+public class StaticTemplateMethods {
 
-    public FileDownloader(String from, String to) {
-
+    public static void downloadFileByUrl(String from, String to) {
         try {
             OutputStream outputStream = null;
             URL url = new URL(from);
@@ -18,7 +19,6 @@ public class FileDownloader {
             File file = new File(to);
             Files.copy(inputStream, file.toPath());
         } catch (IOException e){
-
         }
     }
 }
